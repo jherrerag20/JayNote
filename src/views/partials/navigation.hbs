@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">JNotes</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/about">About</a>
+        </div>
+      </div>
+
+      <div class="navbar-nav d-flex flex-row">
+        {{#if user}}
+        <li class="nav-item dropdown d-flex flex-row">
+          <a class="nav-link dropdown-toggle p-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Notes
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/notes">All Notes</a></li>
+            <li><a class="dropdown-item" href="/notes/add">Add note</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/users/logout">Logout</a></li>
+          </ul>
+        </li> 
+        {{else}}
+        <div class="nav-item p-3">
+            <a href="/users/signin" class="navlink" style="color: white;">Login</a>
+        </div>
+        <div class="nav-item p-3">
+            <a href="/users/signup" class="navlink" style="color: white;">Register</a>
+        </div>
+        {{/if}} 
+      </div>
+      </div>
+    </div>
+  </div>
+</nav>
